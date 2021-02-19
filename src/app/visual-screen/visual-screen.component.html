@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span fxFlex>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="bubbleSort()">BubbleSort</button>
+        <button mat-menu-item (click)="selectionSort()">SelectionSort</button>
+        <button mat-menu-item (click)="callquickSort()">QuickSort</button>
+      </mat-menu>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="chart" style="display: block">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+  >
+  </canvas>
+</div>
+
+<!-- (chartHover)="chartHovered($event)"
+         (chartClick)="chartClicked($event)"> -->
